@@ -1,35 +1,91 @@
 body {
 	margin: 0;
 	padding: 0;
+    font-family: sans-serif;
 }
 
+/* 
+    Developer Background Debugging Class
+    da elementu + vsetkym generaciam vsetkych jeho deti 25% opacity cervene pozadie
+    → vidis vsetko rozlozenie, velkosti atd
+*/
 .bg-dev,
 .bg-dev * {
 	background-color: rgba(200, 0, 0, 0.25) !important;
 }
 
-/*! NAVBAR */
+/* ---------- NAVBAR ---------- */
 .navbar {
+    /* Nastavit Flexbox Layout */
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 10px 100px; /* padding: y-os */
-	background-color: #333;
+    flex-direction: row;    /* Netreba, by default je row → horizontalna os = primary; vertikalna = secondary*/
+	justify-content: space-between;     /* volne miesto v kontajnery rozmiestnit rovnomerne medzi prvky */
+	align-items: center;                /* vycentrovat po sekundarnej osi  */
+
+	padding: 10px 100px;                /* padding: all | y-os x-os | top right bottom left */
+
+    /* Styling */
+	background-color: #222;
+	color: white;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Logo */
+.nav-logo {
+    /* Styling */
+	font-size: 1.5rem;
+	font-weight: bold;
 	color: white;
 	text-decoration: none;
 }
 
-.navbar a {
-	all: unset;
-	text-decoration: none !important;
-}
-
+/* Nav links */
 .nav-links {
-	list-style: none;
-	display: flex;
-	gap: 10px;
+	list-style: none;   /* Disable Bulletpoints in list */
+	display: flex;      
+	gap: 24px;          /* Medzera medzi prvkami na primarnej osi (row)*/
+	margin: 0;          
+	padding: 0;
 }
 
-.nav-logo {
-	font-weight: bold;
+.nav-links li a {
+    /* Styling */
+    color: white;
+	text-decoration: none;
+	font-weight: 500;           
+
+    /* Animacia */
+	transition: color 0.5s ease;    
+    /*
+        Nižšie mame nastaveny a:hover, teda, ked prejdeš myšou, zmení sa farba
+        v transition pišeme 3 veci
+
+        transition: "čoho" "duration" "time-curve"
+            V tomto pripade sa pri hoveri zmení farba - takže color
+            chceme, aby zmena trvala 0.5s
+            a aby priebeh bol "ease", dalsie su napr linear alebo custom bezier curve
+    */
 }
+
+.nav-links li a:hover {
+	color: #00bcd4;
+
+}
+
+
+/* MOZES ZMAZAT*/
+.prekvapko {
+
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+
+
+
+
+
+

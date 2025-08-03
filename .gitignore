@@ -1,3 +1,10 @@
+# Tu su napisane zlozky/subory, ktore ma github ignorovat, ked tam uploadujes kod
+# - napr. node_modules - zbytocne, velke, staci len pakage.json a napisat "npm install"
+#   → stiahne sa node_modules
+#
+# - dal by si sem este .env (enviromental variables)
+#   → tam su ulozene secrets (mena, hesla, API keys, tajne konstanty, ...)
+
 # Node modules
 node_modules/
 
